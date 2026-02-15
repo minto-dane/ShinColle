@@ -38,4 +38,4 @@ Config notes
 
 Bug found during investigation
 ------------------------------
-- Build currently fails at dependency resolution for ForgeGradle (`net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT`) via `http://files.minecraftforge.net/...` because the host is not resolvable in this environment.
+- Build may fail at dependency resolution for ForgeGradle (`net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT`) because it depends on the legacy host `http://files.minecraftforge.net/...`, which can be unavailable. Workaround example: in `build.gradle`, replace `maven { url = "http://files.minecraftforge.net/maven" }` with `maven { url = "https://maven.minecraftforge.net" }` (or another reachable internal mirror).
