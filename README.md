@@ -24,3 +24,18 @@ Mod source code with build.gradle (Google Doc)
 1.7.10:
 https://drive.google.com/file/d/0Bwod9-SE78mFbkoydnZFbmtnRDg/view?usp=sharing
 
+Config notes
+------------
+- Main config file is generated at: `<minecraft config dir>/shincolle/shincolle.cfg`.
+- Ship strength related settings are in category `ship setting`, especially:
+  - `Attrs_Scale`
+  - `Attrs_Limit`
+  - `Attrs_Hostile_SmallBoss`
+  - `Attrs_Hostile_LargeBoss`
+  - `Attrs_Hostile_SmallMob`
+  - `Attrs_Hostile_LargeMob`
+- Source reference: `src/main/java/com/lulan/shincolle/handler/ConfigHandler.java`
+
+Bug found during investigation
+------------------------------
+- Build currently fails at dependency resolution for ForgeGradle (`net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT`) via `http://files.minecraftforge.net/...` because the host is not resolvable in this environment.
