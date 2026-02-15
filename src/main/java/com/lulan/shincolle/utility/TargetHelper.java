@@ -35,6 +35,7 @@ import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.item.EntityFireworkRocket;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.EntitySlime;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityFireball;
 import net.minecraft.entity.projectile.EntityFishHook;
@@ -234,8 +235,8 @@ public class TargetHelper
 				}
 			}
 			
-			//check mob
-        	if(target2 instanceof EntityMob || target2 instanceof EntitySlime)
+			//check mob (including mobs from other mods via IMob interface)
+        	if(target2 instanceof EntityMob || target2 instanceof EntitySlime || target2 instanceof IMob)
         	{
         		return true;
         	}
